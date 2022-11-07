@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html class="page page_scroll_smooth page_view_default{% if page.classlist %} {{ page.classlist | join(' ') }}{% endif %}" lang="{{ page.lang or 'ru' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title or 'Title' }}</title>
+</head>
+<body class="page__body theme theme_root_default theme_color_default theme_layout_default{% if page.body.classlist %} {{ page.body.classlist | join(' ') }}{% endif %}">
+  <div class="page__inner">
+    {% block main %}
+
+    {% endblock %}
+  </div>
+</body>
+</html>

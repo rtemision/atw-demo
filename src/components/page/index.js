@@ -1,0 +1,9 @@
+import '@/components/font';
+import '@/components/theme';
+import '@/components/layout';
+import './page.postcss';
+import './_scroll/page_scroll_smooth.postcss';
+import './__body/page__body.postcss';
+import './__inner/page__inner.postcss';
+import './__footer/page__footer.postcss';
+import './_view/page_view_default.postcss';

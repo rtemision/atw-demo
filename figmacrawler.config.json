@@ -1,0 +1,7 @@
+{
+  "fileKey": "ZqTvV3FJhXA5ITfwJ4Drib",
+  "output": "./src/components/theme/tokens",
+  "platformsMode": "join",
+	"colorFormat": "postcss",
+  "clear": true
+}

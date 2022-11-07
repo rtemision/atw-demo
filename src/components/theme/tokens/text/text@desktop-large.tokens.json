@@ -1,0 +1,74 @@
+{
+  "text": {
+    "display-xl": {
+      "fontSize": {
+        "value": "72px",
+        "group": "typography"
+      },
+      "lineHeight": {
+        "value": "1.11",
+        "group": "typography"
+      }
+    },
+    "headline-xxl": {
+      "fontSize": {
+        "value": "72px",
+        "group": "typography"
+      },
+      "lineHeight": {
+        "value": "1.11",
+        "group": "typography"
+      }
+    },
+    "headline-xl": {
+      "fontSize": {
+        "value": "64px",
+        "group": "typography"
+      },
+      "lineHeight": {
+        "value": "1.13",
+        "group": "typography"
+      }
+    },
+    "headline-l": {
+      "fontSize": {
+        "value": "56px",
+        "group": "typography"
+      },
+      "lineHeight": {
+        "value": "1.14",
+        "group": "typography"
+      }
+    },
+    "headline-m": {
+      "fontSize": {
+        "value": "44px",
+        "group": "typography"
+      },
+      "lineHeight": {
+        "value": "1.18",
+        "group": "typography"
+      }
+    },
+    "headline-s": {
+      "fontSize": {
+        "value": "32px",
+        "group": "typography"
+      },
+      "lineHeight": {
+        "value": "1.25",
+        "group": "typography"
+      }
+    },
+    "headline-xs": {
+      "fontSize": {
+        "value": "24px",
+        "group": "typography"
+      },
+      "lineHeight": {
+        "value": "1.33",
+        "group": "typography"
+      }
+    }
+  }
+}

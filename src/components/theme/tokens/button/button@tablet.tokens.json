@@ -1,0 +1,16 @@
+{
+  "button": {
+    "size": {
+      "m": {
+        "paddingLeft": {
+          "value": "10px",
+          "group": "size"
+        },
+        "paddingRight": {
+          "value": "10px",
+          "group": "size"
+        }
+      }
+    }
+  }
+}

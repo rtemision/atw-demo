@@ -1,0 +1,35 @@
+{% from 'dom-element/dom-element.njk' import domElement %}
+{#
+  @param {Object} data
+#}
+{% macro button(data) %}
+  {% set isLink = data.mods.type === 'link' %}
+
+  {% set content %}
+    {{ data.icon }}
+    {% if data.text %}
+      <span class="button__text">{{ data.text }}</span>
+    {% endif %}
+  {% endset %}
+
+  {{ domElement({
+    tag: 'a' if isLink else 'button',
+    bemEntity: {
+      block: 'button',
+      mods: data.mods,
+      mix: data.mix,
+      classname: data.classname
+    },
+    attrs: {
+      role: role,
+      href: data.url if isLink else false,
+      target: data.target if isLink else false,
+      title: data.title,
+      type: data.mods.type or 'button' if not isLink else false,
+      disabled: 'true' if data.mods.disabled and not isLink else false,
+      'aria-disabled': 'true' if data.mods.disabled else false,
+      'aria-label': data.label
+    } | merge(data.attrs),
+    content: data.content or content
+  }) }}
+{% endmacro %}

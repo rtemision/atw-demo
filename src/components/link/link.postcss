@@ -1,0 +1,12 @@
+.link {
+  text-decoration: none;
+  outline: 0;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: var(--color-webkit-tap-highlight);
+  cursor: pointer;
+
+  &[aria-disabled='true'] {
+    pointer-events: none;
+    cursor: default;
+  }
+}

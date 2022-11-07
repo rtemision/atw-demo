@@ -1,0 +1,39 @@
+@mixin button_filled
+  action, /* $viewName */
+
+  400, /* $fontWeight */
+
+  var(--button-view-action-typo-color-base), /* $colorBase */
+  var(--button-view-action-fill-color-base), /* $fillBase */
+  var(--button-view-action-border-color-base), /* $borderColorBase */
+  var(--button-view-action-border-width), /* $borderWidth */
+  var(--button-view-action-border-radius), /* $borderRadius */
+
+  var(--button-view-action-typo-color-hovered), /* $colorHovered */
+  var(--button-view-action-fill-color-hovered), /* $fillHovered */
+  var(--button-view-action-typo-border-hovered), /* $borderColorHovered */
+
+  var(--button-view-action-typo-color-pressed), /* $colorPressed */
+  var(--button-view-action-fill-color-pressed), /* $fillPressed */
+  var(--button-view-action-border-color-pressed), /* $borderColorPressed */
+
+  var(--button-view-action-typo-color-focused), /* $colorFocused */
+  var(--button-view-action-border-color-focused), /* $borderColorFocused */
+  var(--button-view-action-box-shadow-focused), /* $boxShadowFocused */
+
+  var(--button-view-action-typo-color-disabled), /* $colorDisabled */
+  var(--button-view-action-fill-color-disabled), /* $fillDisabled */
+  var(--button-view-action-border-color-disabled) /* $borderDisabled  */
+;
+
+.button_view_action {
+  &.button_size_s {
+    --button-view-action-border-width: var(--button-view-action-size-s-border-width);
+    --button-view-action-border-radius: var(--button-size-s-border-radius);
+  }
+
+  &.button_size_m {
+    --button-view-action-border-width: var(--button-view-action-size-m-border-width);
+    --button-view-action-border-radius: var(--button-size-m-border-radius);
+  }
+}

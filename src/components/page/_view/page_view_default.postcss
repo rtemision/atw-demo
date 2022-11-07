@@ -1,0 +1,24 @@
+.page_view_default {
+  .page__body {
+    position: relative;
+    overflow-x: hidden;
+    font-family: var(--typography-body-font-family);
+    font-size: var(--typography-body-font-size);
+    font-weight: var(--typography-body-font-weight-base);
+    line-height: var(--typography-body-line-height);
+    letter-spacing: var(--typography-body-letter-spacing);
+    color: var(--color-content-base);
+    background: var(--color-fill-base);
+
+    *::selection {
+      color: var(--color-content-selection);
+      background: var(--color-fill-selection);
+    }
+  }
+
+  &.page_lock-scroll {
+    .page__body {
+      overflow: hidden;
+    }
+  }
+}

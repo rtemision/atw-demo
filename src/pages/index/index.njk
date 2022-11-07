@@ -1,0 +1,103 @@
+{% from 'button/button.njk' import button %}
+{% from 'link/link.njk' import link %}
+
+{% set page = {
+  title: 'Index',
+  lang: 'en',
+  classlist: [
+    'page_type_root'
+  ]
+} %}
+{% extends 'page/page.njk' %}
+{% block main %}
+
+  <section class="section section_view_main">
+    <div class="section__inner">
+      <div class="layout">
+        <h1 class="text text_size_headline-xl text_weight_600 section__title">Title</h1>
+        <div class="content content_view_default section__desc">
+          <p>Lorem ipsum <a href="#">dolor sit amet</a> consectetur, adipisicing elit. Ea possimus laudantium, voluptatum sunt voluptates perspiciatis eum adipisci nesciunt voluptatibus dolor dolore! Perferendis, nesciunt minus? Consectetur veniam ipsum aperiam expedita illo.</p>
+        </div>
+        <div class="section__foot">
+          <p class="text text_size_subheader-l">
+            {{ link({
+              mods: {
+                view: 'text'
+              },
+              url: '#',
+              text: 'Some text link'
+            }) }}
+          </p>
+          <p class="text text_size_subheader-l">
+            {{ link({
+              mods: {
+                view: 'default'
+              },
+              url: '#',
+              text: 'Some text link'
+            }) }}
+          </p>
+        </div>
+        {{ button({
+            mods: {
+              view: 'action',
+              size: 's'
+            },
+            text: 'text'
+          }) }}
+        {{ button({
+            mods: {
+              view: 'action',
+              size: 'm'
+            },
+            text: 'text'
+          }) }}
+        {{ button({
+            mods: {
+              view: 'default',
+              size: 's'
+            },
+            text: 'text'
+          }) }}
+        {{ button({
+            mods: {
+              view: 'default',
+              size: 'm'
+            },
+            text: 'text'
+          }) }}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section_view_main section_bgc_dark theme__color theme__color_override_inverse">
+    <div class="section__inner">
+      <div class="layout">
+        <h1 class="text text_size_headline-xl text_weight_600 section__title">Title</h1>
+        <div class="content content_view_default section__desc">
+          <p>Lorem ipsum <a href="#">dolor sit amet</a> consectetur, adipisicing elit. Ea possimus laudantium, voluptatum sunt voluptates perspiciatis eum adipisci nesciunt voluptatibus dolor dolore! Perferendis, nesciunt minus? Consectetur veniam ipsum aperiam expedita illo.</p>
+        </div>
+        <div class="section__foot">
+          <p class="text text_size_subheader-l">
+            {{ link({
+              mods: {
+                view: 'text'
+              },
+              url: '#',
+              text: 'Some text link'
+            }) }}
+          </p>
+          <p class="text text_size_subheader-l">
+            {{ link({
+              mods: {
+                view: 'default'
+              },
+              url: '#',
+              text: 'Some text link'
+            }) }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

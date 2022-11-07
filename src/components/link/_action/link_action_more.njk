@@ -1,0 +1,23 @@
+{% from 'link/link.njk' import link %}
+{% from 'icon/icon.njk' import icon %}
+{#
+  @param {Object} data
+#}
+{% macro link_action_more(data) %}
+  {{ link({
+    block: 'link',
+    mods: data.mods | merge({ action: 'more', view: 'text' }),
+    mix: data.mix,
+    classname: data.classname,
+    url: data.url,
+    target: data.target,
+    attrs: data.attrs,
+    icon: icon({
+      mods: {
+        size: 'm'
+      },
+      content: 'src/components/theme/_default/circle-arrow-right.svg' | svgContents | svgo
+    }),
+    text: data.text
+  }) }}
+{% endmacro %}

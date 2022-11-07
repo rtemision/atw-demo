@@ -1,0 +1,77 @@
+@define-mixin button_filled
+  $viewName,
+
+  $fontWeight,
+
+  $colorBase,
+  $fillBase,
+  $borderColorBase,
+  $borderWidth,
+  $borderRadius,
+
+  $colorHovered,
+  $fillHovered,
+  $borderColorHovered,
+
+  $colorPressed,
+  $fillPressed,
+  $borderColorPressed,
+
+  $colorFocused,
+  $fillFocused,
+  $borderColorFocused,
+  $boxShadowFocused,
+
+  $colorDisabled,
+  $fillDisabled,
+  $borderDisabled {
+  .button_view_$(viewName) {
+    font-weight: $fontWeight;
+    color: $colorBase;
+    z-index: 0;
+
+    &::before {
+      background: $fillBase;
+      border: $borderWidth solid $borderColorBase;
+      border-radius: $borderRadius;
+    }
+
+    @media (any-hover: hover) {
+      &:not([aria-disabled='true']):hover {
+        color: $colorHovered;
+
+        &::before {
+          background: $fillHovered;
+          border-color: $borderColorHovered;
+        }
+      }
+    }
+
+    &:not([aria-disabled='true']):active {
+      color: $colorPressed;
+
+      &::before {
+        background: $fillPressed;
+        border-color: $borderColorPressed;
+      }
+    }
+
+    &:not([aria-disabled='true']):focus-visible {
+      color: $colorFocused;
+
+      &::before {
+        border-color: $borderColorFocused;
+        box-shadow: $boxShadowFocused;
+      }
+    }
+
+    &[aria-disabled='true'] {
+      color: $colorDisabled;
+
+      &::before {
+        background: $fillDisabled;
+        border-color: $borderDisabled;
+      }
+    }
+  }
+}

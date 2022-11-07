@@ -1,0 +1,10 @@
+.theme_layout_default {
+  --grid-column-gap: var(--grid-gutter);
+  --grid-row-gap: 0;
+  --grid-side-space: var(--grid-offset);
+  --grid-max-width: 100%;
+
+  @media (--md-min) {
+    --grid-max-width: calc(1360px + var(--grid-side-space) * 2);
+  }
+}

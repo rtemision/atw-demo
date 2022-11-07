@@ -1,0 +1,41 @@
+{% from 'dom-element/dom-element.njk' import domElement %}
+{#
+  Link
+  @param {Object} data
+  @param {String} data.text
+  @param {String} data.url
+  @param {String} data.target
+  @param {String} data.classname additional classes
+  @param {Object} data.mods bem mods
+  @param {Bolean} data.mods.pseudo
+  @param {String} data.mods.view
+  @param {Object[]} data.mix bem mix
+  @param {Object} data.attrs attrs
+ #}
+{% macro link(data) %}
+  {% set content %}
+    {{ data.icon }}
+    {% if data.text %}
+      <span class="link__text">{{ data.text }}</span>
+    {% endif %}
+  {% endset %}
+
+  {{ domElement({
+    tag: 'span' if data.mods.pseudo else 'a',
+    bemEntity: {
+      block: 'link',
+      mods: data.mods,
+      mix: data.mix,
+      classname: data.classname
+    },
+    attrs: {
+      role: 'button' if data.mods.pseudo else false,
+      href: data.url if data.url and not data.mods.pseudo else false,
+      target: data.target if data.target else false,
+      'aria-disabled': 'true' if data.mods.disabled else false,
+      title: data.title,
+      'aria-label': data.label
+    } | merge(data.attrs),
+    content: data.content or content
+  }) }}
+{% endmacro %}

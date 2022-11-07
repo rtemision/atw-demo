@@ -1,0 +1,46 @@
+@define-mixin link_colorized
+  $viewName,
+
+  $typoColorBase,
+  $borderColorBase,
+
+  $typoColorHovered,
+  $borderColorHovered,
+
+  $typoColorDisabled,
+  $borderColorDisabled {
+
+  .link_view_$(viewName) {
+    --link-typo-color: $typoColorBase;
+    --link-border-color: $borderColorBase;
+
+    color: var(--link-typo-color);
+    transition: color .15s ease-in;
+
+    .link__text {
+      box-sizing: border-box;
+      transition: border-color .15s ease-in;
+    }
+
+    .link__text {
+      padding-bottom: .05em;
+      border-width: 0 0 1px 0;
+      border-style: var(--link-border-style, solid);
+      border-color: var(--link-border-color);
+    }
+
+    @media (any-hover: hover) {
+      &:not([aria-disabled='true']) {
+        &:hover {
+          --link-typo-color: $typoColorHovered;
+          --link-border-color: $borderColorHovered;
+        }
+      }
+    }
+
+    &[aria-disabled='true'] {
+      --link-typo-color: $typoColorDisabled;
+      --link-border-color: $borderColorDisabled;
+    }
+  }
+}

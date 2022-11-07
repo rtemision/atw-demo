@@ -1,0 +1,35 @@
+{#
+  base component
+  @param {Object} data
+  @param {String} data.tag
+  @param {Object} data.bemEntity
+  @param {String} data.bemEntity.block
+  @param {String} data.bemEntity.elem
+  @param {Object[]} data.bemEntity.mods
+  @param {Object} data.bemEntity.mix
+  @param {Object[]} data.attrs
+  @param {String|HTML} data.content
+ #}
+
+{% set selfClosingTags = [
+  'area',
+  'base',
+  'br',
+  'col',
+  'embed',
+  'hr',
+  'img',
+  'input',
+  'link',
+  'meta',
+  'param',
+  'source',
+  'track',
+  'wbr'
+] %}
+{% macro domElement(data) %}
+  {% set tag = data.tag or 'div' %}
+  {# inline for prevent empty space #}
+  <{{ tag }} class="{{ data.bemEntity | bemClassname }}"{{ data.attrs | attrs }}>{% if selfClosingTags | indexOf(tag) === -1 %}{{ data.content | safe }}</{{ tag }}>
+  {% endif %}
+{% endmacro %}

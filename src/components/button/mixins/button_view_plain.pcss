@@ -1,0 +1,14 @@
+@define-mixin button_view_plain {
+  color: var(--color-button-view-plain-typo-base);
+  transition: color .15s ease-in;
+
+  @media (any-hover: hover) {
+    &:not([aria-disabled='true']):hover {
+      color: var(--color-button-view-plain-typo-hovered);
+    }
+  }
+
+  &:not([aria-disabled='true']):focus-visible {
+    box-shadow: 0px 0px 2px 1px var(--color-button-view-plain-box-shadow-focused);
+  }
+}
